@@ -1,0 +1,11 @@
+package com.rp.controller;
+
+import org.springframework.http.ResponseEntity;
+
+import com.rp.response.RoomResponse;
+
+public class RoomController {
+	public ResponseEntity<RoomResponse> addNewRoom() {
+
+	}
+}

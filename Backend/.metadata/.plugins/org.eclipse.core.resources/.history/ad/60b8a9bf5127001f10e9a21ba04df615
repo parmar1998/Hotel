@@ -1,0 +1,20 @@
+package com.rp.model;
+
+import java.time.LocalDate;
+
+public class BookedRoom {
+	private Long bookingId;
+	private LocalDate checkInDate;
+	private LocalDate checkoutDate;
+	private String guestFullName;
+	private String guestEmail;
+	private int numofAdults;
+	private int numofChildrens;
+	private int totalNoof_Guests;
+	private String bookingconfirmationCode;
+	private Room room;
+
+	public void calculateTotalNumberofGuests() {
+
+	}
+}

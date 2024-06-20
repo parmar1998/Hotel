@@ -1,0 +1,13 @@
+package com.rp.model;
+
+import java.math.BigDecimal;
+
+/**
+ * 
+ */
+public class Room {
+	private Long id;
+	private String roomType;
+	private BigDecimal roomPrice;
+	private boolean isBooked;
+}

@@ -1,0 +1,60 @@
+package com.rp.model;
+
+import java.time.LocalDate;
+
+import jakarta.annotation.Generated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class BookedRoom {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long bookingId;
+	private LocalDate checkInDate;
+	private LocalDate checkoutDate;
+	private String guestFullName;
+	private String guestEmail;
+	private int numofAdults;
+	private int numofChildrens;
+	private int totalNoof_Guests;
+	private String bookingconfirmationCode;
+	private Room room;
+
+	public void setBookingconfirmationCode(String bookingconfirmationCode) {
+		this.bookingconfirmationCode = bookingconfirmationCode;
+	}
+
+	public void calculateTotalNumberofGuests() {
+		this.totalNoof_Guests = this.numofAdults + this.numofChildrens;
+	}
+
+	public int getNumofAdults() {
+		return numofAdults;
+	}
+
+	public void setNumofAdults(int numofAdults) {
+		this.numofAdults = numofAdults;
+		calculateTotalNumberofGuests();
+	}
+
+	public int getNumofChildrens() {
+		return numofChildrens;
+	}
+
+	public void setNumofChildrens(int numofChildrens) {
+		this.numofChildrens = numofChildrens;
+		calculateTotalNumberofGuests();
+	}
+}

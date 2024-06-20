@@ -1,0 +1,230 @@
+/* Body styles */
+body {
+  min-height: 100vh;  /* Minimum height of the viewport */
+  padding-bottom: 50px;  /* Padding at the bottom of the body */
+}
+
+/* Card styles */
+.card {
+  opacity: 0.9;  /* Opacity of 0.9 for cards */
+}
+
+/* Navigation bar definitions */
+.navbar {
+  padding: 0;  /* Remove padding from the navbar */
+}
+
+.navbar .navbar-nav .nav-link {
+  padding: 1em;  /* Padding for nav links */
+}
+
+.navbar .navbar-nav .nav-item {
+  position: relative;  /* Positioning of nav items */
+}
+
+.navbar .navbar-nav .nav-item::after {
+  position: absolute;  /* Absolute positioning of pseudo element */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  background-color: rgb(169, 77, 123);  /* Background color of the line */
+  width: 0;  /* Initial width */
+  margin: 0 auto;  /* Center align */
+  height: 4px;  /* Height of the line */
+  transition: all .5s;  /* Transition effect */
+}
+
+.navbar .navbar-nav .nav-item:hover::after {
+  width: 100%;  /* Full width on hover */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(25, 24, 24);  /* Text color for dark navbar links */
+}
+
+.navbar-dark .navbar-brand {
+  color: rgb(25, 24, 24);  /* Text color for dark navbar brand */
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 992px) {
+  .navbar {
+    padding: 0;  /* Remove padding from the navbar */
+  }
+
+  .navbar .navbar-nav .nav-link {
+    padding: 1em 0;  /* Vertical padding for nav links */
+  }
+
+  .navbar .navbar-nav .nav-item {
+    margin: 0 1em;  /* Margin between nav items */
+  }
+}
+
+/* Hotel custom colors */
+.btn-hotel {
+  background-color: rgb(169, 77, 123);  /* Background color for hotel button */
+  color: #fff;  /* Text color for hotel button */
+}
+
+.btn-hotel:hover {
+  background-color: rgb(137, 127, 132);  /* Hover background color for hotel button */
+  color: #fff;  /* Hover text color for hotel button */
+  transition: 0.7s;  /* Transition duration */
+  outline-color: transparent;  /* Transparent outline color */
+  outline-style: solid;  /* Solid outline style */
+}
+
+.hotel-color {
+  color: rgb(169, 77, 123);  /* Text color for hotel color */
+}
+
+.room-price {
+  color: darkgoldenrod;  /* Text color for room price */
+  font-family: 'Courier New', Courier, monospace;  /* Font family for room price */
+  font-size: medium;  /* Font size for room price */
+}
+
+.vertical-rule {
+  border-left: 0.5px solid black;  /* Vertical rule style */
+  height: 100vh;  /* Height of vertical rule */
+}
+
+/* Parallax background */
+.parallax {
+  background-image: url("./assets/images/parrall.jpg");  /* Background image for parallax */
+  background-attachment: fixed;  /* Fixed background attachment */
+  background-position: center;  /* Centered background position */
+  background-repeat: no-repeat;  /* No repeat for background image */
+  background-size: cover;  /* Cover background size */
+  height: 50vh;  /* Height of parallax */
+}
+
+/* Header styles */
+.header {
+  position: relative;  /* Relative positioning for header */
+  height: 150px;  /* Height of header */
+  background-size: cover;  /* Cover background size */
+  background-image: url("./assets/images/services4.jpg");  /* Background image for header */
+  background-position: center center;  /* Centered background position */
+}
+
+.header-title {
+  color: #fff;  /* Text color for header title */
+  font-size: 4rem;  /* Font size for header title */
+  align-content: center;  /* Centered alignment for header title */
+}
+
+/* Animation styles */
+.animated {
+  animation-duration: 1s;  /* Animation duration */
+}
+
+.animated-texts h1 {
+  animation: fadeInDown 1s ease-in-out;  /* Animation for h1 text */
+}
+
+.animated-texts p, h1, h2 {
+  animation: fadeInUp 1s ease-in-out;  /* Animation for p, h1, h2 text */
+}
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);  /* Animation timing function */
+    transform: translate3d(0, 0, 0);  /* 3D transformation */
+  }
+
+  40%, 60% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);  /* Animation timing function */
+    transform: translate3d(0, -30px, 0);  /* 3D transformation */
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);  /* Animation timing function */
+    transform: translate3d(0, -15px, 0);  /* 3D transformation */
+  }
+
+  90% {
+    transform: translate3d(0, -4px, 0);  /* 3D transformation */
+  }
+}
+
+.bounceIn {
+  animation-name: bounceIn;  /* Animation name */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;  /* Initial opacity */
+    transform: translate3d(0, -50%, 0);  /* 3D transformation */
+  }
+
+  to {
+    opacity: 1;  /* Final opacity */
+    transform: none;  /* No transformation */
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;  /* Initial opacity */
+    transform: translate3d(0, 50%, 0);  /* 3D transformation */
+  }
+
+  to {
+    opacity: 1;  /* Final opacity */
+    transform: none;  /* No transformation */
+  }
+}
+
+/* Header overlay */
+.overlay {
+  position: absolute;  /* Absolute positioning */
+  top: 0;  /* Top position */
+  left: 0;  /* Left position */
+  width: 100%;  /* Full width */
+  height: 100%;  /* Full height */
+  background-color: rgba(0, 0, 0, 0.5);  /* Overlay background color */
+}
+
+.overlay-content {
+  position: absolute;  /* Absolute positioning */
+  top: 50%;  /* 50% top position */
+  left: 50%;  /* 50% left position */
+  transform: translate(-50%, -50%);  /* Centered transformation */
+  color: #fff;  /* Text color */
+  justify-content: flex-start;  /* Flex start justification */
+}
+
+/* Header banner */
+.header-banner {
+  background-image: url("./assets/images/services-1.jpg");  /* Background image for header banner */
+  background-size: cover;  /* Cover background size */
+  background-position: center;  /* Centered background position */
+  position: relative;  /* Relative positioning */
+  height: 80vh;  /* Height of header banner */
+}
+
+@media only screen and (max-width: 768px) {
+  .header-banner h1 {
+    font-size: 20px;  /* Font size for h1 on smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header-banner h1 {
+    font-size: 16px;  /* Font size for h1 on even smaller screens */
+  }
+}
+
+/* Footer styles */
+.footer {
+  position: fixed;  /* Fixed positioning */
+  left: 0;  /* Left position */
+  bottom: 0;  /* Bottom position */
+  width: 100%;  /* Full width */
+  background-color: #f5f5f5;  /* Background color for footer */
+  height: 60px;  /* Height of footer */
+  text-align: center;  /* Centered text alignment */
+}

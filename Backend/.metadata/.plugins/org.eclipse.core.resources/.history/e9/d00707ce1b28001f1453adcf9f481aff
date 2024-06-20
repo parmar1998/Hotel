@@ -1,0 +1,26 @@
+package com.rp.service;
+
+import java.math.BigDecimal;
+import java.sql.Blob;
+
+import javax.sql.rowset.serial.SerialBlob;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import com.rp.model.Room;
+
+public class RoomServiceImpl implements IRoomService {
+
+	@Override
+	public Room addNewRoom(MultipartFile photo, String roomType, BigDecimal roomPrice) {
+		Room room = new Room();
+		room.setRoomType(roomType);
+		room.setRoomPrice(roomPrice);
+		if (!photo.isEmpty()) {
+			byte[] photoBytes = photo.getBytes();
+			Blob photoBlob = new SerialBlob(photoBytes);
+		}
+		return null;
+	}
+
+}

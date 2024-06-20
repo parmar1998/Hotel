@@ -1,0 +1,19 @@
+package com.rp.response;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import com.rp.model.Room;
+
+public class BookingRoomResponse {
+	private Long bookingId;
+	private LocalDate checkInDate;
+	private LocalDate checkoutDate;
+	private String guestFullName;
+	private String guestEmail;
+	private int numofAdults;
+	private int numofChildrens;
+	private int totalNoof_Guests;
+	private String bookingconfirmationCode;
+	private Room room;
+}

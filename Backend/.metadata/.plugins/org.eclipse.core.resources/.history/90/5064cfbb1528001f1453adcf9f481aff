@@ -1,0 +1,11 @@
+package com.rp.response;
+
+import java.math.BigDecimal;
+
+public class BookedResponse {
+	private Long id;
+	private String roomType;
+	private BigDecimal roomPrice;
+	private Boolean isBooked;
+	private String photo;
+}
